@@ -29,7 +29,7 @@ html {
   --DarkText: #000000;
   --DarkTextVar: #111111;
   --WhiteText: #ffffff;
-  --WhiteTextVar: #dadada;
+  --WhiteTextVar: #e4e4e4;
 }
 .container {
   max-width: 1200px;
@@ -84,6 +84,31 @@ h2::after {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
+.btn-wpp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 200;
+  filter: drop-shadow(2px 2px 8px rgba(22, 22, 22, 0.295));
+  -webkit-filter: drop-shadow(2px 2px 8px rgba(22, 22, 22, 0.295));
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: 0.1s ease-out;
+  -webkit-transition: 0.1s ease-out;
+  -moz-transition: 0.1s ease-out;
+  -ms-transition: 0.1s ease-out;
+  -o-transition: 0.1s ease-out;
+}
+.btn-wpp:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
 /********** HEADER **********/
 .header {
   display: flex;
@@ -102,6 +127,17 @@ h2::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header .menu .logo {
+  opacity: 0.8;
+  transition: 0.2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -ms-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+}
+.header .menu .logo:hover {
+  opacity: 1;
 }
 .header .menu ul {
   display: flex;
@@ -165,11 +201,16 @@ h2::after {
   color: var(--WhiteText);
   line-height: 1.5;
 }
+.hero .headline h1 > span {
+  color: var(--AccentVar);
+}
 .hero .headline p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--WhiteTextVar);
   margin: 2rem 0;
+  max-width: 90%;
+  width: 100%;
 }
 .hero .headline .clients {
   display: flex;
@@ -524,6 +565,8 @@ h2::after {
 .faq .content .leftside img {
   display: block;
   width: 70%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .faq .content .rightside {
   display: flex;
@@ -567,6 +610,17 @@ h2::after {
   flex-wrap: wrap;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--PrimaryVar);
+}
+.footer .top .logo {
+  opacity: 0.7;
+  transition: 0.2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -ms-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+}
+.footer .top .logo:hover {
+  opacity: 1;
 }
 .footer .top .logo h4,
 .footer .top .privacy h4,
@@ -622,10 +676,18 @@ h2::after {
   font-weight: 400;
   color: var(--WhiteTextVar);
   opacity: 0.6;
+  transition: 0.2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  -moz-transition: 0.2s ease-out;
+  -ms-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
 }
 .footer .bottom .back-top::after {
   content: "⬆️";
   font-size: 1.2rem;
   display: inline-block;
   margin-left: 10px;
+}
+.footer .bottom .back-top:hover {
+  opacity: 1;
 }
