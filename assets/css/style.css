@@ -18,6 +18,7 @@ li {
 html,
 body {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /********** COMPONENTES **********/
@@ -69,6 +70,8 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--DarkTextVar);
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
 }
 h2::after {
@@ -376,12 +379,14 @@ h2::after {
   background-color: var(--WhiteText);
 }
 .target .content {
+  position: relative;
+  z-index: 10;
   display: flex;
   gap: 2rem;
 }
 .target .content .img,
 .target .content .public {
-  max-width: 50%;
+  max-width: 100%;
   width: 100%;
 }
 .target .content .img {
@@ -397,7 +402,6 @@ h2::after {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-left: 3rem;
 }
 .target .content .public .item {
   display: flex;
@@ -405,9 +409,9 @@ h2::after {
   align-items: center;
   gap: 1rem;
   background-color: var(--WhiteTextVar);
-  max-width: 50%;
+  max-width: 400px;
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -690,4 +694,137 @@ h2::after {
 }
 .footer .bottom .back-top:hover {
   opacity: 1;
+}
+
+/********* BOTÃO RESPONSIVO DO MENU **********/
+.header .mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+.header .mobile-menu div {
+  width: 2rem;
+  height: 2px;
+  background-color: var(--WhiteText);
+  margin: 8px;
+}
+/********* BOTÃO DO MENU MOBILE **********/
+.header .mobile-menu {
+  display: none;
+  border: 0;
+  background-color: transparent;
+}
+.header .mobile-menu div {
+  width: 2rem;
+  height: 2px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+/********* RESPONSIVIDADE **********/
+@media (max-width: 1050px) {
+  .hero .hero-img img {
+    height: 70%;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 850px) {
+  .btn-wpp {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+  .hero .content {
+    flex-direction: column-reverse;
+  }
+  .hero .headline {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  .hero .headline h1 {
+    font-size: 32px;
+  }
+  .hero .headline p {
+    max-width: 100%;
+  }
+  .hero .headline .btn a {
+    width: 100%;
+  }
+  .hero .hero-img {
+    display: flex;
+    margin-top: -2rem;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero .hero-img img {
+    width: 30%;
+    margin-top: 0;
+  }
+  .hero .more-content {
+    display: none;
+  }
+  .info {
+    padding: 1rem 0;
+  }
+  .target .content .img {
+    display: none;
+  }
+  .target .content .img img {
+    top: 0;
+    width: 80%;
+  }
+  .target .content .public .item {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 515px) {
+  h2 {
+    font-size: 28px;
+  }
+  .hero,
+  .services,
+  .target,
+  .portfolio,
+  .depoiments,
+  .faq {
+    padding: 3rem 0;
+  }
+  .hero .headline h1 {
+    font-size: 28px;
+  }
+  .hero .headline p {
+    font-size: 14px;
+  }
+  .hero .hero-img img {
+    min-width: 150px;
+    width: 100%;
+    max-width: 35%;
+  }
+  .info ul li {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+  .services .card-box .item {
+    max-width: 100%;
+    width: 100%;
+  }
+  .services .card-box {
+    gap: 1.5rem;
+  }
+  .services .btn a {
+    width: 100%;
+  }
+}
+@media (max-width: 440px) {
+  .hero .headline .clients {
+    font-size: 12px;
+  }
+  .hero .headline .clients .avatar img {
+    width: 24px;
+    height: 24px;
+  }
 }
