@@ -115,23 +115,25 @@ h2::after {
 /********** HEADER **********/
 .header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 100;
-  align-items: center;
-  padding: 1.25rem 0;
   width: 100%;
-  background-image: linear-gradient(90deg, var(--Primary), var(--DarkTextVar));
-  border-bottom: 1px solid var(--PrimaryVar);
+  z-index: 50;
+  background: var(--Primary);
+  height: 4.6875rem;
+  border: 1px solid var(--PrimaryVar);
 }
-.header .menu {
+.content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
-.header .menu .logo {
+.logo {
+  display: block;
+  height: 18px;
   opacity: 0.8;
   transition: 0.2s ease-out;
   -webkit-transition: 0.2s ease-out;
@@ -139,27 +141,30 @@ h2::after {
   -ms-transition: 0.2s ease-out;
   -o-transition: 0.2s ease-out;
 }
-.header .menu .logo:hover {
+.logo:hover {
   opacity: 1;
 }
-.header .menu ul {
+.logo img {
+  height: 100%;
+  width: 100%;
+}
+.menu {
+  list-style: none;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
-.header .menu ul li {
-  margin-left: 2rem;
-}
-.header .menu ul li a {
-  color: var(--WhiteText);
-  transition: 0.2s ease-out;
-  -webkit-transition: 0.2s ease-out;
-  -moz-transition: 0.2s ease-out;
-  -ms-transition: 0.2s ease-out;
-  -o-transition: 0.2s ease-out;
-}
-.header .menu ul li a:hover {
+.menu a {
   display: block;
-  color: var(--WhiteTextVar);
+  color: var(--WhiteText);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.menu a:hover {
+  background: var(--PrimaryVar);
+}
+.btn-menu {
+  display: none;
 }
 
 /********** HERO SECTION **********/
@@ -730,11 +735,80 @@ h2::after {
     margin-top: 2rem;
   }
 }
+/********** TELA DE 850px **********/
 @media (max-width: 850px) {
   .btn-wpp {
     bottom: 0.5rem;
     right: 0.5rem;
   }
+  /* BOTÂO */
+  .menu {
+    display: block;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    background: var(--Primary);
+    text-align: center;
+    width: 100%;
+    height: 0;
+    z-index: 50;
+    visibility: hidden;
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+  .menu a {
+    padding: 1rem 0;
+    margin-inline: 1rem;
+    border-bottom: 0.0625rem solid var(--PrimaryVar);
+    border-radius: 0;
+  }
+  .btn-menu {
+    background: none;
+    border: none;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--WhiteTextVar);
+    padding: 1rem 0;
+    cursor: pointer;
+  }
+  .hamburger {
+    border-top: 0.125rem solid;
+    width: 1.25rem;
+  }
+  .hamburger::after,
+  .hamburger::before {
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+  .nav.active .menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  .nav.active .hamburger {
+    border-top-color: transparent;
+  }
+  .nav.active .hamburger::before {
+    transform: rotate(135deg);
+  }
+  .nav.active .hamburger::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+
+  /* HERO */
   .hero .content {
     flex-direction: column-reverse;
   }
@@ -781,6 +855,7 @@ h2::after {
     margin: 0 auto;
   }
 }
+/********** TELA DE 515px **********/
 @media (max-width: 515px) {
   h2 {
     font-size: 28px;
