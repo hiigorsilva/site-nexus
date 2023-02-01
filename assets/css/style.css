@@ -880,10 +880,8 @@ h2::after {
     height: 18px;
     width: auto;
   }
-  .footer .bottom {
-    flex-direction: column-reverse;
-    gap: 1rem;
-    align-items: flex-start;
+  .footer .bottom .back-top {
+    display: none;
   }
 }
 /********** TELA DE 515px **********/
