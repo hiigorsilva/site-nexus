@@ -395,12 +395,13 @@ h2::after {
   width: 100%;
 }
 .target .content .img {
+  display: block;
   position: relative;
   z-index: 2;
 }
 .target .content .img img {
   position: absolute;
-  top: -2rem;
+  top: -14rem;
   right: 0;
 }
 .target .content .public {
@@ -854,6 +855,36 @@ h2::after {
   .target .content .public .item {
     margin: 0 auto;
   }
+  .faq .content {
+    flex-direction: column;
+  }
+  .faq .content .leftside img {
+    display: none;
+  }
+  .faq .content .rightside {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+/********** TELA DE 680px **********/
+@media (max-width: 680px) {
+  .footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .footer .top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer .top .logo img {
+    height: 18px;
+    width: auto;
+  }
+  .footer .bottom {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    align-items: flex-start;
+  }
 }
 /********** TELA DE 515px **********/
 @media (max-width: 515px) {
@@ -890,8 +921,13 @@ h2::after {
   .services .card-box {
     gap: 1.5rem;
   }
-  .services .btn a {
+  .services .btn a,
+  .portfolio .btn a {
     width: 100%;
+  }
+  .services .btn,
+  .portfolio .btn {
+    margin-top: 2rem;
   }
 }
 @media (max-width: 440px) {
